@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Example</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align:center;
+        }
+
+        button {
+            background-color: #1d231d;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #57e861;
+            color:black
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Advanced HTML Example</h1>
+        <p>This is a simple example that demonstrates the use of advanced HTML tags and CSS styling.</p>
+        <ul>
+            <li><strong>Section 1:</strong> Using &lt;div&gt; for container</li>
+            <li><strong>Section 2:</strong> Styling with CSS</li>
+            <li><strong>Section 3:</strong> Using &lt;button&gt; for interactive element</li>
+        </ul>
+        <button onclick="showAlert()">Click me</button>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert('Button clicked!');
+        }
+    </script>
+</body>
+</html>

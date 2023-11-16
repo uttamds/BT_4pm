@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex HTML Example</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #form-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 400px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: #ff0000;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-container">
+      <h1>Contact Form</h1>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <div class="error" id="name-error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <div class="error" id="email-error"></div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <div class="error" id="message-error"></div>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var nameError = document.getElementById("name-error");
+        var emailError = document.getElementById("email-error");
+        var messageError = document.getElementById("message-error");
+
+        // Reset errors
+        nameError.innerHTML = "";
+        emailError.innerHTML = "";
+        messageError.innerHTML = "";
+
+        // Validation
+        if (name.trim() === "") {
+          nameError.innerHTML = "Name is required";
+        }
+
+        if (email.trim() === "") {
+          emailError.innerHTML = "Email is required";
+        } else if (!validateEmail(email)) {
+          emailError.innerHTML = "Invalid email format";
+        } 
+
+        if (message.trim() === "") {
+          messageError.innerHTML = "Message is required";
+        }
+      }
+
+      function validateEmail(email) {
+        // Simple email validation using a regular expression
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    </script>
+  </body>
+</html>
